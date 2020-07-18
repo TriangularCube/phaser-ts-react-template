@@ -2,14 +2,15 @@ import * as Phaser from 'phaser'
 
 import { TestScene } from './scenes/TestScene'
 
-const gameConfig: Phaser.Types.Core.GameConfig = {
+export const gameConfig: Phaser.Types.Core.GameConfig = {
     title: 'Phaser Template',
 
     type: Phaser.AUTO,
 
     scale: {
-        width: window.innerWidth,
-        height: window.innerHeight,
+        autoCenter: Phaser.Scale.CENTER_BOTH,
+        width: 800,
+        height: 600,
     },
 
     physics: {
@@ -19,10 +20,8 @@ const gameConfig: Phaser.Types.Core.GameConfig = {
         },
     },
 
-    parent: 'game',
+    parent: 'game-root',
     backgroundColor: '#efc533',
 
-    scene: [TestScene]
-};
-
-export const game = new Phaser.Game(gameConfig);
+    scene: [TestScene],
+}

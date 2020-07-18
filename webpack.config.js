@@ -4,7 +4,7 @@ const CopyPlugin = require('copy-webpack-plugin')
 const path = require('path')
 
 module.exports = {
-    entry: './src/main.ts',
+    entry: './src/App.tsx',
     output: {
         filename: process.env.production
             ? '[name].[contenthash].js'
@@ -15,7 +15,7 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.tsx?$/,
+                test: /\.[tj]sx?$/,
                 exclude: /node_modules/,
                 use: {
                     loader: 'babel-loader',
@@ -54,6 +54,7 @@ module.exports = {
         port: 1234,
         historyApiFallback: true,
         hot: true,
+        open: true
     },
     optimization: {
         moduleIds: 'hashed',
